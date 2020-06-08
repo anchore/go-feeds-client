@@ -16,6 +16,7 @@ import (
 	_nethttp "net/http"
 	_neturl "net/url"
 	"strings"
+
 	"github.com/antihax/optional"
 )
 
@@ -29,8 +30,8 @@ type DefaultApiService service
 
 // GetFeedGroupDataOpts Optional parameters for the method 'GetFeedGroupData'
 type GetFeedGroupDataOpts struct {
-    Since optional.String
-    NextToken optional.String
+	Since     optional.String
+	NextToken optional.String
 }
 
 /*
@@ -39,8 +40,8 @@ GetFeedGroupData Method for GetFeedGroupData
  * @param feed
  * @param group
  * @param optional nil or *GetFeedGroupDataOpts - Optional Parameters:
- * @param "Since" (optional.String) - 
- * @param "NextToken" (optional.String) - 
+ * @param "Since" (optional.String) -
+ * @param "NextToken" (optional.String) -
 @return DataListing
 */
 func (a *DefaultApiService) GetFeedGroupData(ctx _context.Context, feed string, group string, localVarOptionals *GetFeedGroupDataOpts) (DataListing, *_nethttp.Response, error) {
@@ -55,9 +56,9 @@ func (a *DefaultApiService) GetFeedGroupData(ctx _context.Context, feed string, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/feeds/{feed}/{group}"
-	localVarPath = strings.Replace(localVarPath, "{"+"feed"+"}", _neturl.QueryEscape(parameterToString(feed, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"feed"+"}", _neturl.QueryEscape(parameterToString(feed, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"group"+"}", _neturl.QueryEscape(parameterToString(group, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"group"+"}", _neturl.QueryEscape(parameterToString(group, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -140,7 +141,7 @@ func (a *DefaultApiService) GetTask(ctx _context.Context, taskId string) (Task, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/tasks/{task_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"task_id"+"}", _neturl.QueryEscape(parameterToString(taskId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"task_id"+"}", _neturl.QueryEscape(parameterToString(taskId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -201,16 +202,16 @@ func (a *DefaultApiService) GetTask(ctx _context.Context, taskId string) (Task, 
 
 // GetTasksOpts Optional parameters for the method 'GetTasks'
 type GetTasksOpts struct {
-    Filter optional.String
-    Details optional.String
+	Filter  optional.String
+	Details optional.String
 }
 
 /*
 GetTasks Method for GetTasks
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetTasksOpts - Optional Parameters:
- * @param "Filter" (optional.String) - 
- * @param "Details" (optional.String) - 
+ * @param "Filter" (optional.String) -
+ * @param "Details" (optional.String) -
 @return []Task
 */
 func (a *DefaultApiService) GetTasks(ctx _context.Context, localVarOptionals *GetTasksOpts) ([]Task, *_nethttp.Response, error) {
@@ -370,7 +371,7 @@ func (a *DefaultApiService) ListFeedGroups(ctx _context.Context, feed string) (G
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/feeds/{feed}"
-	localVarPath = strings.Replace(localVarPath, "{"+"feed"+"}", _neturl.QueryEscape(parameterToString(feed, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"feed"+"}", _neturl.QueryEscape(parameterToString(feed, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

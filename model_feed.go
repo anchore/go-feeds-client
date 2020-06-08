@@ -9,12 +9,14 @@
  */
 
 package openapi
+
 // Feed A source of data from the anchore service composed of groups each with its own data series
 type Feed struct {
 	// Name of the feed.
 	Name string `json:"name,omitempty"`
 	// The level of user allowed to access this feed's groups.
-	AccessTier string `json:"access_tier,omitempty"`
+	// TODO: missing TYPE int
+	AccessTier int `json:"access_tier,omitempty"`
 	// What the feed data is and means.
 	Description string `json:"description,omitempty"`
 }

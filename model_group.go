@@ -9,12 +9,14 @@
  */
 
 package openapi
+
 // Group Group of data within a feed
 type Group struct {
 	// Name of the feed group.
 	Name string `json:"name,omitempty"`
 	// The level of user allowed to access this group's data.
-	AccessTier string `json:"access_tier,omitempty"`
+	// TODO: missing TYPE int
+	AccessTier int `json:"access_tier,omitempty"`
 	// What the group data is and means.
 	Description string `json:"description,omitempty"`
 }
